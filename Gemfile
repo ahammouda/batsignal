@@ -4,6 +4,7 @@ gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'pg'
 # gem 'rack-pjax'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.0'
