@@ -19,13 +19,10 @@
 
 jQuery ->
 
-  clearFlash = ->
+  clearFlash =
     $('#flash-container').click(function () {
       $(this).delay(300).fadeOut(400);
     });
   clearFlash()
 
   $('.dropdown-toggle').dropdown()
-  
-
-
