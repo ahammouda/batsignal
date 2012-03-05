@@ -138,6 +138,7 @@ body {
 	@include border-radius(5px);
 	padding: 15px;
 	@include box-shadow(inset 1px 1px 1px gray);
+	min-height: 50em;
 }
 
 ////////////////////////////////////////
@@ -161,5 +162,24 @@ body {
 		height: 100%;
 		padding: 25px 0 0 55px;
 		font-weight: 200;
+	}
+
+	#footer-copyright{
+		display: inline;
+		position: relative;
+		float: left;
+		color: #adadad;
+	}
+
+	.footer-links {
+		display: inline;
+		position: relative;
+		float: left;
+		li {
+			display: inline;
+			position: relative;
+			float: left;
+			margin: 0 15px 0 0;
+		}
 	}
 }
