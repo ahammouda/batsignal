@@ -14,15 +14,8 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap
-//= require users
-//= require_tree .
+//= core
+//= sessions
+//= users
+//= agendas
 
-jQuery ->
-
-  clearFlash =
-    $('#flash-container').click(function () {
-      $(this).delay(300).fadeOut(400);
-    });
-  clearFlash()
-
-  $('.dropdown-toggle').dropdown()
