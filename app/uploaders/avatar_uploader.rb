@@ -21,6 +21,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
      "./fallback/" + [version_name, "default.jpg"].compact.join('_')
    end
 
+   def cache_dir
+    "#{Rails.root}/tmp/uploads"
+   end
+
   # Process files as they are uploaded:
   #  process :scale => [200, 300]
   #
