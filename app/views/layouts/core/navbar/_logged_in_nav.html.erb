@@ -1,6 +1,6 @@
 <%= link_to "Agendo", user_path(@me), :class => "brand" %>
 <ul class="nav">
-  <li class="divider-vertical logo"></li>
+  <li class="divider-vertical logo" id="first-divider"></li>
   <li><%= link_to "New Agenda", new_user_agenda_path(@me, @my_agenda) %></li>
   <li class="divider-vertical logo"></li>
   <li><%= link_to "Call Pool", user_path(@me) %></li>

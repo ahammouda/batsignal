@@ -3,6 +3,5 @@
   <div id="profile-action" class="well">
     <%= link_to "New Agenda", new_user_agenda_path(@me),:class => "btn btn-primary profile-action" %>
   </div>
-  <%= render :partial => 'layouts/left_side/notifications', :object => @me %>
   <%= render :partial => 'layouts/left_side/agendas', :object => @me %>
 </div>

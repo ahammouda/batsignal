@@ -10,10 +10,21 @@
  *
  *= require_self
 */
+
+// $iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+// $iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
 @import 'bourbon';
 @import 'agendo_hub';	// required for twitter bootstrap styles via bootstrap-sass.gem
 @import 'profile';
 @import 'profile-edit';
+
+
+////////////////////////////////////////
+//
+// GENERAL
+//
+//
 
 body {
 //	@include linear-gradient(#D6E5F2, #FAFDFF);
@@ -36,6 +47,7 @@ body {
 	padding: 3px 10px;
 }
 
+
 #flash-container {
 	position: absolute;
 	top:40;
@@ -44,8 +56,19 @@ body {
 	z-index:3;
 }
 
+
+////////////////////////////////////////
+//
+//	NAV BAR
+//
+//
+
 .navbar {
 	margin: 0;
+}
+
+#navbar-container{
+	margin: 0 0 0 35px;
 }
 
 .navbar-inner {
@@ -55,7 +78,8 @@ body {
 #navbar-user-menu {
 	margin: 5px 0 0 0;
 	height: 100%;
-	
+
+
 	ul {
 		margin: 0;
 	}
@@ -65,6 +89,16 @@ body {
 		border: 1px solid #787878;
 	}
 }
+
+#first-divider {
+	margin: 0 0 0 35px;
+}
+	
+////////////////////////////////////////
+//
+// LOG IN SCREEN
+//
+//
 
 #body-mask {
 	height: 100%;
@@ -77,16 +111,25 @@ body {
 	background-repeat: no-repeat;
 }
 
+
+////////////////////////////////////////
+//
+// MAIN RIGHT SIDE CONTENT
+//
+//
+
 #edit-container {
 	margin: 70px 0 0 30px;
+	width: 300px;
 	.hero-unit {
 		padding: 25px 40px;
 		@include box-shadow(0px 0px 0px 5px whiteSmoke);
 		border: 2px solid #CADDEB;
 	}
-	width: 300px;
 	.help-block {
 		font-size: 16px;
+	}
+	.lander {
 	}
 }
 
@@ -96,6 +139,12 @@ body {
 	padding: 15px;
 	@include box-shadow(inset 1px 1px 1px gray);
 }
+
+////////////////////////////////////////
+//
+// FOOTER
+//
+//
 
 #main-footer {
 	width: 100%;

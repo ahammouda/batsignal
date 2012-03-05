@@ -12,6 +12,7 @@
 	min-width: 175px;
 	@include box-shadow(0px 2px 1px 3px #242424);
 	background-color: white;
+	@include border-bottom-right-radius(4px);
 }
 
 .navbar {
@@ -84,13 +85,39 @@
 
 #profile-agendas {
 	background-color: white;
-	padding: 0 0 0 3px;
+	padding: 0 10px;
+
+	.profile-agenda-header {
+		font-weight: 500;
+		font-size: 1.4em;
+		color: #3d3d3d;
+
+	}
+
+	ol {
+		padding: 0px;
+		margin: 0px;
+	}
+
+	li {
+		list-style-type: none;
+		margin: 0px 0px 10px 0px;
+		border-bottom: 1px solid #FAE6CA;
+	}
+
 }
-
-
 
 // RIGHT SIDE 
 
 #right-side {
 //	background-color:whiteSmoke;
+}
+
+#main-content-container {
+	dl {
+		padding: 10px;
+	}
+	dd {
+		margin: 0;
+	}
 }
