@@ -1,0 +1,10 @@
+<div id="profile-agendas" class="left-side-component">
+  Agendas
+  <ol>
+    <% @my_agendas.each do |agenda| %>
+      <li class="agenda">
+        <%= link_to agenda.name, user_agenda_path(@me, agenda.id) %><br/>
+      </li>
+    <% end %>
+  </ol>
+</div>

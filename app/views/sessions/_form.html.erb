@@ -1,0 +1,13 @@
+<%= form_tag '/login', :method => :post do %>
+  <div class="input">
+    <%= label_tag :username, "Username or Email" %>
+    <%= text_field_tag :username %>
+  </div>
+  <div class="input">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %> 
+  </div>
+  <div class="button">
+    <%= submit_tag "Log in", :class => "primary btn btn-primary commit create" %>
+  </div>
+<% end %>

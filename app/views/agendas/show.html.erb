@@ -1,0 +1,34 @@
+<h1>Agenda: <%= @agenda.name %></h1>
+<div id="agenda-details">
+  Created at: <%= @agenda.created_at %>
+</div>
+<%= link_to '< Back', user_path(@user) %>
+<div id="agenda-description">
+  <br/>
+  <% if @agenda.description == nil %>
+    No description
+  <% else %>
+    <%= @agenda.description %>
+  <% end %>
+
+  <% if current_user && current_user.id == @user.id %>
+    <div id="add-description">
+      <% if @agenda.description == nil %>
+        <%= link_to "Add description", edit_user_agenda_path(current_user, @agenda) %>
+      <% else %>
+        <%= link_to "Edit description", edit_user_agenda_path(current_user, @agenda), :class => "btn" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div id="fork-agenda">
+      <%= link_to "Fork agenda", fork_user_agenda_path(@user, @agenda), :method => :post %>
+    </div>
+  <% end %>
+
+</div>
+<br/>
+<br/>
+<% if current_user && current_user.id == @user.id %>
+  <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete, :class => "btn btn-danger"%>
+<% end %>
+

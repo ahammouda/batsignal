@@ -1,0 +1,156 @@
+Fix the agenda links on the left-side 
+Fix the agenda links when viewing own profile
+# could be a bad user thing; just make a new user
+
+
+
+Take a person, tag them to an Agenda
+Image processing
+	for thumb nails and shit
+Layouts and shit
+
+Forkable Agendas
+
+
+Do agenda forking
+	Or call the "add_child" method:
+
+	parent = Tag.create(:name => 'Parent')
+	grandparent.add_child parent
+
+	--
+	Note that any other AR fields can be set with the second, optional attributes argument.
+
+	child = Tag.find_or_create_by_path(%w{home chuck Photos"}, {:tag_type => "File"})k
+
+
+
+Do rosters / call lists
+	watch people
+		do activity feed 
+	
+# PostgreSQL FAQ
+Issue:
+	If you switch branches and then try to restart PostgreSQL with `postmaster -D .`
+	you might get an error that ends in 'PANIC: could not locate valid checkpoint record'.
+Fix:
+	`pg_resetxlog .; postmaster -D .`
+
+
+# CARRIERWAVE GOODNESS
+Go back and install ImageMagick so that you can install RMagick,
+so that you can do processing on user-uploaded avatars,
+so that you can offer different sized avatars (profile view vs. thumbnail)
+
+will also be good to have for attaching images to Agendas
+	as thumbnails
+	as part of content?
+	etc
+
+
+# INSTALLING IMAGEMAGICK
+	Step-by-step
+	------------
+	sudo brew update
+		// make sure you have the latest brew
+	sudo brew install librsvg
+		// this is a biggie but the key step; could take ~1 hr
+	brew install -f imagemagick --disable-openmp
+	bundle install
+
+	--------
+	http://rmagick.rubyforge.org/install-osx.etml
+
+
+	eventually, the command is:
+	
+	this prevents getting a shitty version that segfaults.
+	
+	Getting ImageMagick installed might take a long time.
+	You have to install RMagick first and build them both; it's beastly.
+	But, these are required... to make thumbnail-sized images out of user-uploaded files.
+
+	// Out of date?
+	Issue:
+		After getting ImageMagick, I still couldn't gem install rmagick without getting an error.
+	Fix:
+		`brew install libmagic`		// <== this is spelled correctly; it's NOT 'ck' 
+
+User
+	Agents
+	
+User has_many :agents
+
+
+
+
+
+
+
+
+User	
+	Agents
+		type => ally
+		type => liability
+
+	Allies (follows type1)
+		
+	Liabilities (follows type2)
+		
+
+	friends
+
+	enemies
+
+
+
+
+
+
+
+Add in private agendas after this initial pass on core system
+
+Fix 'agendas#all'
+	controller doesn't work too good. der.
+
+Associate allies and liabilities with Agendas
+
+
+Fix the ordering thing for agenda partials
+	> see "user#show"
+
+
+User
+	has_many Allies
+	Agenda
+		has_many :allies
+
+
+user_id	allie_id
+
+	Allies
+	allie_id user_id
+	user_id agenda_id allie_id
+	
+	user.allies
+	user.agendas.allies
+	agenda.allies
+
+ create_table "agendas", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.boolean  "private",               :default => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.text     "description"
+                fork_count
+
+                fork_id
+                agenda_id
+                user_id
+    t.integer  "forked_from_user_id"
+    t.integer  "forked_from_agenda_id"
+    t.integer  "original_agenda_id"
+                
+
+

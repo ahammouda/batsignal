@@ -1,0 +1,14 @@
+<%= image_tag(@user.avatar_url(:profile)) %> <br/>
+<br/>
+<h3>Agendas</h3>
+<dl>
+  <% @user.agendas.each do |agenda| %>
+    <dt id="#{@user.username}-agenda-#{agenda.id}">
+      <%= link_to(agenda.name, user_agenda_path(@user, agenda)) %>
+    <dt>
+    <dd>
+      <%= agenda.description %>
+    </dd>
+    <br/>
+  <% end %>
+</dl>

@@ -1,0 +1,96 @@
+
+#left-side {
+	display: inline;
+	float: left;
+	height: auto;
+	position: fixed;
+	z-index:6;
+	margin:40px 0 0 0;
+	padding: 0px;
+	width: 25%;
+	max-width: 175px;
+	min-width: 175px;
+	@include box-shadow(0px 2px 1px 3px #242424);
+	background-color: white;
+}
+
+.navbar {
+	display: block;
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+
+}
+
+#right-side {
+	display:inline;
+	float: left;
+	position: relative;
+	margin: 40px 0 0 150px;
+	padding: 15px;
+	width:80%;
+}
+
+// LEFT SIDE
+#profile-info {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	#profile-avatar {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
+
+		img {
+			position: relative;
+			display: block;
+			clear: both;
+		}
+	}
+
+	#profile-username-background {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
+		background-color: black;
+	}
+	
+	#profile-username {
+		color: white;
+		font: 1.2em;
+		text-align: center;
+		margin: 0;
+		padding: 0 0 2px 0;
+		font-weight: bold;
+		text-shadow: -1px -1px 1px #6B6149;
+		p {
+			margin: 0;
+			padding: 3px 0px;
+			font-size: 1.3em;
+		}
+	}
+}
+
+#profile-action {
+	text-align: center;
+	.profile-action {
+		margin: 3px auto;
+	}
+}
+
+#profile-agendas {
+	background-color: white;
+	padding: 0 0 0 3px;
+}
+
+
+
+// RIGHT SIDE 
+
+#right-side {
+//	background-color:whiteSmoke;
+}

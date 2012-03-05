@@ -1,0 +1,115 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+*/
+@import 'bourbon';
+@import 'agendo_hub';	// required for twitter bootstrap styles via bootstrap-sass.gem
+@import 'profile';
+@import 'profile-edit';
+
+body {
+	@include linear-gradient(#D6E5F2, #FAFDFF);
+}
+.container {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.divider-vertical.logo {
+	margin-left: 20px;
+}
+
+.well {
+	padding: 3px;
+}
+
+.btn-inverse.profile-action {
+	padding: 3px 10px;
+}
+
+#flash-container {
+	position: absolute;
+	top:40;
+	left:0;
+	width: 100%;
+	z-index:3;
+}
+
+.navbar {
+	margin: 0;
+}
+
+.navbar-inner {
+	@include box-shadow(0px 1px 4px 2px #696969);
+}
+
+#navbar-user-menu {
+	margin: 5px 0 0 0;
+	height: 100%;
+	
+	ul {
+		margin: 0;
+	}
+	#nav-avatar {
+		background-color: white;
+		padding: 3px;
+		border: 1px solid #787878;
+	}
+}
+
+#body-mask {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:35;
+	left:0;
+	background-color: #91C2EB;
+	background-image: url('background/photo2.jpg');
+	background-repeat: no-repeat;
+}
+
+#edit-container {
+	margin: 70px 0 0 30px;
+	.hero-unit {
+		padding: 25px 40px;
+		@include box-shadow(0px 0px 0px 5px whiteSmoke);
+		border: 2px solid #CADDEB;
+	}
+	width: 300px;
+	.help-block {
+		font-size: 16px;
+	}
+}
+
+#main-content-container {
+	background-color: whiteSmoke;
+	@include border-radius(5px);
+	padding: 15px;
+	@include box-shadow(inset 1px 1px 1px gray);
+}
+
+#main-footer {
+	width: 100%;
+	min-height: 60px;
+	background-color: white;
+	position: relative;
+	display:block;
+	clear: both;
+	border-top: 2px solid orange;
+
+	#footer-container {
+		margin: 0 auto;
+		width: 900px;
+		height: 100%;
+		padding: 25px 0 0 55px;
+		font-weight: 200;
+	}
+}

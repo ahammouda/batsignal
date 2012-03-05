@@ -1,0 +1,10 @@
+<div id="user-#{user.id}" class="user-item">
+  <div id="user-item-details">
+    <%= link_to(user.username, user_path(user)) %><br/>
+  </div>
+  <div id="user-item-avatar">
+    <%= link_to(image_tag(user.avatar_url(:profile)), user_path(user)) %>
+  </div>
+</div>
+
+
