@@ -16,7 +16,8 @@
 @import 'profile-edit';
 
 body {
-	@include linear-gradient(#D6E5F2, #FAFDFF);
+//	@include linear-gradient(#D6E5F2, #FAFDFF);
+	background-image:url("background/blue-noise-2.png"); 
 }
 .container {
 	margin-left: 25px;
