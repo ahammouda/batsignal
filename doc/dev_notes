@@ -1,3 +1,13 @@
+
+# Deploying to Heroku
+precompile the assets locally first:
+ RAILS_ENV=production bundle exec rake assets:precompile
+in application.js:
+	Need to explicitly specify the files you want to include in the asset compilation
+then, git push heroku master
+
+
+
 Fix the agenda links on the left-side 
 Fix the agenda links when viewing own profile
 # could be a bad user thing; just make a new user
