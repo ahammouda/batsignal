@@ -81,12 +81,19 @@ body {
 				text-decoration: none;
 			}
 		}
-
+		
 		#navbar-logo {
 			display:inline;
 			position: relative;
 			float:left;
 			margin: 10px 0 0 0;
+		}
+
+		#navbar-logo-logged-out {
+			display:inline;
+			position: relative;
+			float:left;
+			margin: 10px 0 0 20px;
 		}
 
 		#navbar-items {

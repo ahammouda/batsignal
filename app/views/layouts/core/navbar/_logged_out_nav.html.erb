@@ -1,17 +1,21 @@
-<%= link_to "Agendo", root_path, :class => "brand" %>
-<ul class="nav">
-  <li class="divider-vertical logo"></li>
-  <li><%= link_to "Learn more", root_path %></li>
-        <li class="divider-vertical logo"></li>
-  <li><%= link_to "Mobile", root_path %></li>
-        <li class="divider-vertical logo"></li>
-  <li><%= link_to "API", root_path %></li>
-        <li class="divider-vertical logo"></li>
-  <li><%= link_to "Contact", root_path %></li>
-        <li class="divider-vertical logo"></li>
-  <% unless request.fullpath == login_path %>
-  <li><%= link_to "Log in", login_path %></li>
-  <% else %>
-  <li><%= link_to "Sign up", signup_path %></li>
-  <% end %>
-</ul>
+<div id="navbar-logo-logged-out">
+  <%= link_to "Agendo", root_path, :id => "agendo" %>
+</div>
+<div id="navbar-items">
+  <ul class="nav">
+    <li class="divider-vertical logo"></li>
+    <li><%= link_to "About", root_path %></li>
+          <li class="divider-vertical logo"></li>
+    <li><%= link_to "Mobile", root_path %></li>
+          <li class="divider-vertical logo"></li>
+    <li><%= link_to "API", root_path %></li>
+          <li class="divider-vertical logo"></li>
+    <li><%= link_to "Contact", root_path %></li>
+          <li class="divider-vertical logo"></li>
+    <% unless request.fullpath == login_path %>
+    <li><%= link_to "Log in", login_path %></li>
+    <% else %>
+    <li><%= link_to "Sign up", signup_path %></li>
+    <% end %>
+  </ul>
+</div>
