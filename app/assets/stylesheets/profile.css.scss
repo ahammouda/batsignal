@@ -158,13 +158,33 @@
 	padding: 15px 0 0 0;
 	@include box-shadow(inset 1px 1px 1px gray);
 	min-height: 50em;
-	margin: 55px 0 0 0;
+	margin: 45px 0 0 0;
 }
 
 #main-content-container {
+	width: 900px;
+	white-space: pre-line;
+	margin: 0 0 0 210px;
 	dl {
+		dt {
+			margin: 0px;
+			padding: 0px;
+		}
+		dd {
+			margin: 0px;
+			padding: 0px;
+		}
 	}
-	dd {
+}
+
+
+#profile-agendas-main {
+	h3 {
 		margin: 0;
+		padding: 0;
+	}
+	dl {
+		margin: 0;
+		padding: 0;
 	}
 }
