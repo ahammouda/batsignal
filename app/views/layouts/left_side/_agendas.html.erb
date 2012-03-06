@@ -2,7 +2,7 @@
   <span class="profile-agenda-header">Agendas</span> | People
   <ol>
     <% @my_agendas.each do |agenda| %>
-      <li class="agenda">
+      <li class="profile-agenda">
         <%= link_to agenda.name, user_agenda_path(@me, agenda.id) %><br/>
       </li>
     <% end %>

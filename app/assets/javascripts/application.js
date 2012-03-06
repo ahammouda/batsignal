@@ -18,4 +18,5 @@
 //= sessions
 //= users
 //= agendas
+//= left-side
 
