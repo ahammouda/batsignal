@@ -4,7 +4,9 @@
 
 $iconSpritePath: asset-path('glyphicons-halflings.png', image);
 $iconWhiteSpritePath: asset-path('glyphicons-halflings-white.png', image);
-
+// $navbarBackground: #F7F9FF;
+$navbarBackground: white;
+$navbarBackgroundHighlight: white;
 
 @import 'bootstrap';
 
