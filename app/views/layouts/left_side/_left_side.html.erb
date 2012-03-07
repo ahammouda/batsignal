@@ -1,13 +1,8 @@
-<div id="pre-left-side">
-</div>
-<div id="top-side" class="top-side">
-</div>
-<div id="top-side-2" class="top-side">
-</div>
+<%= render :partial => "layouts/left_side/background_prep" %>
 <div id="left-side">
-  <div id="profile-top"></div>
+  <div id="ls-profile-cap"></div>
   <%= render :partial => 'layouts/left_side/profile', :object => @me %>
-  <div id="profile-action" class="well">
+  <div id="ls-action-button" class="well">
     <%= link_to "New Agenda", new_user_agenda_path(@me),:class => "btn btn-primary profile-action" %>
   </div>
   <%= render :partial => 'layouts/left_side/agendas', :object => @me %>

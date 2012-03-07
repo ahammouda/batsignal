@@ -1,3 +1,119 @@
+// LEFT SIDE
+#left-side {
+	display: inline;
+	float: left;
+	height: auto;
+	position: fixed;
+	z-index:6;
+	margin: 56px 0 0 12px;
+	padding: 0px;
+	width: 25%;
+	max-width: 175px;
+	min-width: 175px;
+	background-color: white;
+	height: 100%;
+	@include border-bottom-right-radius(4px);
+	@include border-top-right-radius(5px);
+	@include border-top-left-radius(5px);
+	@include box-shadow(1px 1px 4px 1px gray);
+}
+
+#ls-profile-cap {
+	border-bottom: 4px solid whiteSmoke;
+	@include border-top-left-radius(4px);
+}
+
+#ls-profile {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	#ls-avatar {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
+		border-left: 2px solid white;
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
+
+		img {
+			position: relative;
+			display: block;
+			clear: both;
+			@include border-top-left-radius(5px);
+			@include border-top-right-radius(5px);
+			max-height: 143px;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+
+	#ls-username-background {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
+		background-color: black;
+	
+		#ls-username {
+			color: white;
+			font: 1.2em;
+			text-align: center;
+			margin: 0;
+			padding: 0 0 2px 0;
+			font-weight: bold;
+			text-shadow: -1px -1px 1px #6B6149;
+			p {
+				margin: 0;
+				padding: 3px 0px;
+				font-size: 1.3em;
+			}
+		}
+	}
+}
+
+#ls-action-button {
+	text-align: center;
+	.ls-action {
+		margin: 3px auto;
+	}
+}
+
+#ls-agendas-list {
+	background-color: white;
+	padding: 0 10px;
+
+	.ls-agenda-header {
+		font-weight: 500;
+		font-size: 1.4em;
+		color: #3d3d3d;
+
+	}
+
+	ol {
+		padding: 0px;
+		margin: 0px;
+	}
+
+	li.ls-agenda {
+		list-style-type: none;
+		margin: 0px 0px 10px 0px;
+		border-bottom: 1px solid #FAE6CA;
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+}
+
+
+
+////////////////////////////////
+//
+// PRE-LEFT SIDE
+//
 #pre-left-side{
 	display: inline;
 	float: left;
@@ -33,158 +149,3 @@
 	z-index: 3;
 }
 
-
-#left-side {
-	display: inline;
-	float: left;
-	height: auto;
-	position: fixed;
-	z-index:6;
-	margin: 56px 0 0 12px;
-	padding: 0px;
-	width: 25%;
-	max-width: 175px;
-	min-width: 175px;
-	background-color: white;
-	height: 100%;
-	@include border-bottom-right-radius(4px);
-	@include border-top-right-radius(5px);
-	@include border-top-left-radius(5px);
-	@include box-shadow(1px 1px 4px 1px gray);
-}
-
-#right-side {
-	display:inline;
-	float: left;
-	position: relative;
-	margin: 55px 0 0 0px;
-	padding: 0;
-	width:100%;
-}
-
-// LEFT SIDE
-#profile-top {
-	border-bottom: 4px solid whiteSmoke;
-	@include border-top-left-radius(4px);
-}
-
-#profile-info {
-	position: relative;
-	display: block;
-	margin: 0;
-	padding: 0;
-
-	#profile-avatar {
-		position: relative;
-		display: block;
-		margin: 0;
-		padding: 0;
-		border-left: 2px solid white;
-		border-right: 2px solid white;
-		border-bottom: 2px solid white;
-
-		img {
-			position: relative;
-			display: block;
-			clear: both;
-			@include border-top-left-radius(5px);
-			@include border-top-right-radius(5px);
-		}
-	}
-
-	#profile-username-background {
-		position: relative;
-		display: block;
-		margin: 0;
-		padding: 0;
-		background-color: black;
-	
-		#profile-username {
-			color: white;
-			font: 1.2em;
-			text-align: center;
-			margin: 0;
-			padding: 0 0 2px 0;
-			font-weight: bold;
-			text-shadow: -1px -1px 1px #6B6149;
-			p {
-				margin: 0;
-				padding: 3px 0px;
-				font-size: 1.3em;
-			}
-		}
-	}
-}
-
-#profile-action {
-	text-align: center;
-	.profile-action {
-		margin: 3px auto;
-	}
-}
-
-#profile-agendas {
-	background-color: white;
-	padding: 0 10px;
-
-	.profile-agenda-header {
-		font-weight: 500;
-		font-size: 1.4em;
-		color: #3d3d3d;
-
-	}
-
-	ol {
-		padding: 0px;
-		margin: 0px;
-	}
-
-	li {
-		list-style-type: none;
-		margin: 0px 0px 10px 0px;
-		border-bottom: 1px solid #FAE6CA;
-		a:hover {
-			text-decoration: none;
-		}
-	}
-
-}
-
-// RIGHT SIDE 
-
-#right-side {
-	background-color:whiteSmoke;
-	@include border-radius(5px);
-	padding: 15px 0 0 0;
-	@include box-shadow(inset 1px 1px 1px gray);
-	min-height: 50em;
-	margin: 45px 0 0 0;
-}
-
-#main-content-container {
-	width: 900px;
-	white-space: pre-line;
-	margin: 0 0 0 210px;
-	dl {
-		dt {
-			margin: 0px;
-			padding: 0px;
-		}
-		dd {
-			margin: 0px;
-			padding: 0px;
-		}
-	}
-}
-
-
-#profile-agendas-main {
-	h3 {
-		margin: 0;
-		padding: 0;
-	}
-	dl {
-		margin: 0;
-		padding: 0;
-	}
-}

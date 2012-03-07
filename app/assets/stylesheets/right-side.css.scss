@@ -1,0 +1,19 @@
+// RIGHT SIDE 
+#right-side {
+	display:inline;
+	float: left;
+	position: relative;
+	width:100%;
+	min-height: 50em;
+	margin: 50px 0 0 0;
+	padding: 0;
+	background-color:whiteSmoke;
+	@include border-radius(5px);
+	@include box-shadow(inset 1px 1px 1px gray);
+}
+
+#main-content-container {
+	margin: 20px 0 0 205px;	
+	width: 80%;
+}
+

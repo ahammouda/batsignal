@@ -1,10 +1,10 @@
-<div id="profile-info">
-  <div id="profile-avatar">
+<div id="ls-profile">
+  <div id="ls-avatar">
     <%= link_to(image_tag(@me.avatar_url(:profile)), user_path(@me)) %>
   </div>
-  <div id="profile-username-background">
-    <div id="profile-username">
-      <p id="profile-name-holder">
+  <div id="ls-username-background">
+    <div id="ls-username">
+      <p id="ls-name-holder">
         <% if request.fullpath == user_path(@me) %>
           <%= @me.username %>
         <% else %>

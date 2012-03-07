@@ -12,9 +12,11 @@
 */
 
 @import 'bourbon';
-@import 'agendo_hub';	// required for twitter bootstrap styles via bootstrap-sass.gem
-@import 'profile';
-@import 'profile-edit';
+@import 'bootstrap_changes';	// required for twitter bootstrap styles via bootstrap-sass.gem
+@import 'navbar';
+@import 'left-side';
+@import 'right-side';
+@import 'user-profile';
 
 
 ////////////////////////////////////////
@@ -44,7 +46,6 @@ body {
 	padding: 3px 10px;
 }
 
-
 #flash-container {
 	position: absolute;
 	top:40;
@@ -54,90 +55,6 @@ body {
 }
 
 
-////////////////////////////////////////
-//
-//	NAV BAR
-//
-//
-
-#navbar {
-	margin: 0;
-	width: 100%;
-	background-color: white;
-	@include box-shadow(0px 1px 4px 2px #696969);
-	border-bottom: 2px solid gray;
-	position: fixed;
-	z-index: 8;
-
-	#navbar-container{
-		width: 970px;
-		margin: 0 0 0 55px;
-		padding: 0;
-		background-color: red;
-
-		#agendo {
-			font-size: 2em;
-			&:hover {
-				text-decoration: none;
-			}
-		}
-		
-		#navbar-logo {
-			display:inline;
-			position: relative;
-			float:left;
-			margin: 10px 0 0 0;
-		}
-
-		#navbar-items {
-			display:inline;
-			position: relative;
-			float:left;
-			margin: 12px 0 0 0;
-
-			ul {
-				margin: 0 0 0 60px;
-			}
-			li {
-				display:inline;
-				position: relative;
-				float:left;
-				margin: 0 10px 0 0;
-			
-			}
-		}
-
-		#navbar-user-menu {
-			display:inline;
-			position: relative;
-			float:right;
-			margin: 5px 20px 0 0;
-			height: 100%;
-
-			ul {
-				margin: 0;
-				li {
-					list-style-type: none;
-				}
-			}
-
-			#nav-avatar {
-				background-color: #E8F2FA;
-				padding: 3px;
-				border: 1px solid #787878;
-				@include border-radius(4px);
-				img {
-					@include border-radius(4px);
-				}
-			}
-		}
-	}
-}
-
-#first-divider {
-	margin: 0 0 0 35px;
-}
-	
 ////////////////////////////////////////
 //
 // LOG IN SCREEN
@@ -155,14 +72,7 @@ body {
 	background-repeat: no-repeat;
 }
 
-
-////////////////////////////////////////
-//
-// MAIN RIGHT SIDE CONTENT
-//
-//
-
-#edit-container {
+.login-container {
 	margin: 70px 0 0 30px;
 	width: 300px;
 	.hero-unit {
@@ -177,9 +87,10 @@ body {
 	}
 }
 
+
 ////////////////////////////////////////
 //
-// FOOTER
+// FOOTER		# not in current layout
 //
 //
 

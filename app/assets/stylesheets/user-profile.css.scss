@@ -1,0 +1,45 @@
+#profile-top {
+	position: relative;
+	display: block;
+	height: auto;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: red;
+	
+	#profile-avatar {
+		img {
+			@include border-radius(4px);
+			margin: 0;
+			padding: 0;
+		}
+	}
+	#profile-info {
+	}
+}
+
+#profile-agendas {
+	h3 {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			a {
+				font-size: 1.4em;
+			}
+		}
+	}
+}
+
+.profile-agenda {
+	white-space: pre-line;
+}
+
