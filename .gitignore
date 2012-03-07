@@ -432,3 +432,4 @@ tmp/cache/sass/ffbbc999c4b183c63f2c1a9726458de65eb43a27/_variables.scssc
 tmp/cache/sass/ffbbc999c4b183c63f2c1a9726458de65eb43a27/_wells.scssc
 tmp/cache/sass/ffbbc999c4b183c63f2c1a9726458de65eb43a27/bootstrap.scssc
 log/development.log
+db/pg/pg_stat_tmp/pgstat.stat
