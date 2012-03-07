@@ -1,7 +1,8 @@
 <% unless flash.empty? %>
   <div id = "flash-container">
   <% flash.each do |key, msg| %>
-    <div class = "alert alert-#{key}"> 
+    <div class="alert alert-<%= key == :notice ? "success" : "error" %>">
+      <a class="close" data-dismiss="alert">x</a>
       <%= content_tag(:div, msg ) %> 
     </div>
   <% end %>

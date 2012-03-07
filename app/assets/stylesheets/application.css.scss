@@ -10,13 +10,22 @@
  *
  *= require_self
 */
+
 @import 'bourbon';
 @import 'agendo_hub';	// required for twitter bootstrap styles via bootstrap-sass.gem
 @import 'profile';
 @import 'profile-edit';
 
+
+////////////////////////////////////////
+//
+// GENERAL
+//
+//
+
 body {
-	@include linear-gradient(#D6E5F2, #FAFDFF);
+//	@include linear-gradient(#D6E5F2, #FAFDFF);
+	background-image:url("background/blue-noise-2.png"); 
 }
 .container {
 	margin-left: 25px;
@@ -35,6 +44,7 @@ body {
 	padding: 3px 10px;
 }
 
+
 #flash-container {
 	position: absolute;
 	top:40;
@@ -43,27 +53,96 @@ body {
 	z-index:3;
 }
 
-.navbar {
+
+////////////////////////////////////////
+//
+//	NAV BAR
+//
+//
+
+#navbar {
 	margin: 0;
-}
-
-.navbar-inner {
+	width: 100%;
+	background-color: white;
 	@include box-shadow(0px 1px 4px 2px #696969);
+	border-bottom: 2px solid gray;
+	position: fixed;
+	z-index: 8;
+
+	#navbar-container{
+		width: 970px;
+		margin: 0 0 0 55px;
+		padding: 0;
+		background-color: red;
+
+		#agendo {
+			font-size: 2em;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		
+		#navbar-logo {
+			display:inline;
+			position: relative;
+			float:left;
+			margin: 10px 0 0 0;
+		}
+
+		#navbar-items {
+			display:inline;
+			position: relative;
+			float:left;
+			margin: 12px 0 0 0;
+
+			ul {
+				margin: 0 0 0 60px;
+			}
+			li {
+				display:inline;
+				position: relative;
+				float:left;
+				margin: 0 10px 0 0;
+			
+			}
+		}
+
+		#navbar-user-menu {
+			display:inline;
+			position: relative;
+			float:right;
+			margin: 5px 20px 0 0;
+			height: 100%;
+
+			ul {
+				margin: 0;
+				li {
+					list-style-type: none;
+				}
+			}
+
+			#nav-avatar {
+				background-color: #E8F2FA;
+				padding: 3px;
+				border: 1px solid #787878;
+				@include border-radius(4px);
+				img {
+					@include border-radius(4px);
+				}
+			}
+		}
+	}
 }
 
-#navbar-user-menu {
-	margin: 5px 0 0 0;
-	height: 100%;
-	
-	ul {
-		margin: 0;
-	}
-	#nav-avatar {
-		background-color: white;
-		padding: 3px;
-		border: 1px solid #787878;
-	}
+#first-divider {
+	margin: 0 0 0 35px;
 }
+	
+////////////////////////////////////////
+//
+// LOG IN SCREEN
+//
+//
 
 #body-mask {
 	height: 100%;
@@ -76,25 +155,33 @@ body {
 	background-repeat: no-repeat;
 }
 
+
+////////////////////////////////////////
+//
+// MAIN RIGHT SIDE CONTENT
+//
+//
+
 #edit-container {
 	margin: 70px 0 0 30px;
+	width: 300px;
 	.hero-unit {
 		padding: 25px 40px;
 		@include box-shadow(0px 0px 0px 5px whiteSmoke);
 		border: 2px solid #CADDEB;
 	}
-	width: 300px;
 	.help-block {
 		font-size: 16px;
 	}
+	.lander {
+	}
 }
 
-#main-content-container {
-	background-color: whiteSmoke;
-	@include border-radius(5px);
-	padding: 15px;
-	@include box-shadow(inset 1px 1px 1px gray);
-}
+////////////////////////////////////////
+//
+// FOOTER
+//
+//
 
 #main-footer {
 	width: 100%;
@@ -112,4 +199,24 @@ body {
 		padding: 25px 0 0 55px;
 		font-weight: 200;
 	}
+
+	#footer-copyright{
+		display: inline;
+		position: relative;
+		float: left;
+		color: #adadad;
+	}
+
+	.footer-links {
+		display: inline;
+		position: relative;
+		float: left;
+		li {
+			display: inline;
+			position: relative;
+			float: left;
+			margin: 0 15px 0 0;
+		}
+	}
 }
+

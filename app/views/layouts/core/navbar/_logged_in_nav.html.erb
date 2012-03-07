@@ -1,14 +1,4 @@
-<%= link_to "Agendo", user_path(@me), :class => "brand" %>
-<ul class="nav">
-  <li class="divider-vertical logo"></li>
-  <li><%= link_to "New Agenda", new_user_agenda_path(@me, @my_agenda) %></li>
-  <li class="divider-vertical logo"></li>
-  <li><%= link_to "Call Pool", user_path(@me) %></li>
-  <li class="divider-vertical logo"></li>
-  <li><%= link_to "Browse Users", users_path %></li>
-  <li class="divider-vertical logo"></li>
-</ul>
-<div id="navbar-user-menu" class="pull-right">
+<div id="navbar-user-menu">
   <ul>
     <li class="dropdown">
       <%= link_to(image_tag(@me.avatar_url(:nav), :id => 'nav-avatar'),'#',
@@ -22,3 +12,21 @@
     </li>
   </ul>
 </div>
+<div id="navbar-logo">
+  <%= link_to "Agendo", user_path(@me), :id => "agendo" %>
+</div>
+<div id="navbar-items">
+  <ul class="nav">
+    <li class="divider-vertical logo" id="first-divider"></li>
+    <li><%= link_to "Agendas", users_path %></li>
+    <li class="divider-vertical logo"></li>
+    <li><%= link_to "Maps", users_path %></li>
+    <li class="divider-vertical logo"></li>
+    <li><%= link_to "Plans", users_path %></li>
+    <li class="divider-vertical logo"></li>
+    <li><%= link_to "People", users_path %></li>
+  </ul>
+</div>
+<form class="navbar-search pull-left">
+  <input type="text" class="search-query" placeholder="Search">
+</form>

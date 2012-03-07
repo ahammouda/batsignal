@@ -16,7 +16,7 @@ jQuery ->
 
 #	ownSortable() 
 
-	$('.agenda a').pjax('[data-pjax-container]')
+#	$('.agenda a').pjax('[data-pjax-container]')
 
 	$('#agendas').click => $(this).slideUp(500)
 

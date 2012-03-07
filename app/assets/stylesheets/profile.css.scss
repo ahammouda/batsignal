@@ -1,3 +1,38 @@
+#pre-left-side{
+	display: inline;
+	float: left;
+	height: 100%;
+	background-image: url('background/blue-noise-2.png');
+	position: fixed;
+	z-index:5;
+	width: 25%;
+	padding: 0 0 0 13px;
+	max-width: 175px;
+	min-width: 175px;
+	height: 100%;
+}
+
+.top-side{
+	display: inline;
+	width: 100%;
+	min-height: 53px;
+	position: fixed;
+}
+
+#top-side{
+	background-image: url('background/blue-noise-2.png');
+	@include box-shadow(0px 1px 2px 1px #c4c4c4);
+	z-index: 4;
+}
+
+#top-side-2{
+	background-color: whiteSmoke;
+	margin: 53px 0 0 0;
+	min-height: 15px;
+	@include box-shadow(0px 1px 3px 1px whiteSmoke);
+	z-index: 3;
+}
+
 
 #left-side {
 	display: inline;
@@ -5,33 +40,34 @@
 	height: auto;
 	position: fixed;
 	z-index:6;
-	margin:40px 0 0 0;
+	margin: 56px 0 0 12px;
 	padding: 0px;
 	width: 25%;
 	max-width: 175px;
 	min-width: 175px;
-	@include box-shadow(0px 2px 1px 3px #242424);
 	background-color: white;
-}
-
-.navbar {
-	display: block;
-	position: fixed;
-	z-index: 5;
-	width: 100%;
-
+	height: 100%;
+	@include border-bottom-right-radius(4px);
+	@include border-top-right-radius(5px);
+	@include border-top-left-radius(5px);
+	@include box-shadow(1px 1px 4px 1px gray);
 }
 
 #right-side {
 	display:inline;
 	float: left;
 	position: relative;
-	margin: 40px 0 0 150px;
-	padding: 15px;
-	width:80%;
+	margin: 55px 0 0 0px;
+	padding: 0;
+	width:100%;
 }
 
 // LEFT SIDE
+#profile-top {
+	border-bottom: 4px solid whiteSmoke;
+	@include border-top-left-radius(4px);
+}
+
 #profile-info {
 	position: relative;
 	display: block;
@@ -43,11 +79,16 @@
 		display: block;
 		margin: 0;
 		padding: 0;
+		border-left: 2px solid white;
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
 
 		img {
 			position: relative;
 			display: block;
 			clear: both;
+			@include border-top-left-radius(5px);
+			@include border-top-right-radius(5px);
 		}
 	}
 
@@ -57,20 +98,20 @@
 		margin: 0;
 		padding: 0;
 		background-color: black;
-	}
 	
-	#profile-username {
-		color: white;
-		font: 1.2em;
-		text-align: center;
-		margin: 0;
-		padding: 0 0 2px 0;
-		font-weight: bold;
-		text-shadow: -1px -1px 1px #6B6149;
-		p {
+		#profile-username {
+			color: white;
+			font: 1.2em;
+			text-align: center;
 			margin: 0;
-			padding: 3px 0px;
-			font-size: 1.3em;
+			padding: 0 0 2px 0;
+			font-weight: bold;
+			text-shadow: -1px -1px 1px #6B6149;
+			p {
+				margin: 0;
+				padding: 3px 0px;
+				font-size: 1.3em;
+			}
 		}
 	}
 }
@@ -84,13 +125,66 @@
 
 #profile-agendas {
 	background-color: white;
-	padding: 0 0 0 3px;
+	padding: 0 10px;
+
+	.profile-agenda-header {
+		font-weight: 500;
+		font-size: 1.4em;
+		color: #3d3d3d;
+
+	}
+
+	ol {
+		padding: 0px;
+		margin: 0px;
+	}
+
+	li {
+		list-style-type: none;
+		margin: 0px 0px 10px 0px;
+		border-bottom: 1px solid #FAE6CA;
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
 }
-
-
 
 // RIGHT SIDE 
 
 #right-side {
-//	background-color:whiteSmoke;
+	background-color:whiteSmoke;
+	@include border-radius(5px);
+	padding: 15px 0 0 0;
+	@include box-shadow(inset 1px 1px 1px gray);
+	min-height: 50em;
+	margin: 45px 0 0 0;
+}
+
+#main-content-container {
+	width: 900px;
+	white-space: pre-line;
+	margin: 0 0 0 210px;
+	dl {
+		dt {
+			margin: 0px;
+			padding: 0px;
+		}
+		dd {
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+}
+
+
+#profile-agendas-main {
+	h3 {
+		margin: 0;
+		padding: 0;
+	}
+	dl {
+		margin: 0;
+		padding: 0;
+	}
 }
