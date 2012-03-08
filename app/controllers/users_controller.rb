@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :find_user, :except => [:index, :new, :edit, :create]
+#  before_filter :find_user, :except => [:index, :new, :edit, :create]
 
   def index
     @users = User.find(:all)
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     def find_user
       User.find(params[:id])
       if request.path != user_path(@user)
-        respond_with @user, :status => :moved_permanently
+        respond_with user_path(@user)
       end
     end
 end
