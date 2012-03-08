@@ -5,7 +5,7 @@
 	height: auto;
 	position: fixed;
 	z-index:6;
-	margin: 60px 0 0 12px;
+	margin: 59px 0 0 12px;
 	padding: 0px;
 	width: 25%;
 	max-width: 175px;
@@ -21,6 +21,7 @@
 #ls-profile-cap {
 	border-bottom: 4px solid whiteSmoke;
 	@include border-top-left-radius(4px);
+	@include border-top-right-radius(4px);
 }
 
 #ls-profile {
@@ -138,12 +139,13 @@
 #top-side{
 	background-image: url('background/blue-noise-2.png');
 	@include box-shadow(0px 1px 2px 1px #c4c4c4);
+	margin: 4px 0 0 0;
 	z-index: 4;
 }
 
 #top-side-2{
 	background-color: whiteSmoke;
-	margin: 53px 0 0 0;
+	margin: 58px 0 0 0;
 	min-height: 15px;
 	@include box-shadow(0px 1px 3px 1px whiteSmoke);
 	z-index: 3;
