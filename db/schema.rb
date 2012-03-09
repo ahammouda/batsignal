@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228020800) do
+ActiveRecord::Schema.define(:version => 20120309223243) do
 
   create_table "agenda_hierarchies", :id => false, :force => true do |t|
     t.integer "ancestor_id",   :null => false
@@ -81,6 +81,16 @@ ActiveRecord::Schema.define(:version => 20120228020800) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "items", :force => true do |t|
+    t.string   "topic"
+    t.text     "body"
+    t.integer  "agenda_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["agenda_id"], :name => "index_items_on_agenda_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

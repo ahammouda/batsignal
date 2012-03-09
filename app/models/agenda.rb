@@ -14,4 +14,6 @@ class Agenda < ActiveRecord::Base
 
   acts_as_audited
   has_associated_audits
+  
+  has_many :items
 end

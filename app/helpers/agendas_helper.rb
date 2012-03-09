@@ -1,5 +1,4 @@
 module AgendasHelper
-
   def fork_agenda
     @user = User.find(params[:user_id])
     @agenda = @user.agendas.find(params[:id])
