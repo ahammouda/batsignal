@@ -7,9 +7,9 @@ node :owner_path do |user|
 end
 
 node :owner_thumb_avatar_url do |user|
-	user.avatar_url(:thumb)
+	@user.avatar_url(:thumb)
 end
 
 node :owner_profile_avatar_url do |user|
-	user.avatar_url(:profile)
+	@user.avatar_url(:profile)
 end

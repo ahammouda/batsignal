@@ -1,1 +1,11 @@
-<%= render :partial => 'user', :collection => @users %>
+<table id="user_table">
+  <% @users.each_slice(4) do |slice| %>
+  <tr class="user_table_row">
+    <% slice.each do |user| %>
+      <td class="user_table_data">
+        <%= link_to(image_tag(user.avatar_url(:profile)), user_path(user)) %>
+      </td>
+    <% end %>
+  </tr> 
+  <% end %>
+</table>
