@@ -1,20 +1,37 @@
+$profile-height: 200px;
+$profile-width: 200px;
+
 #profile-top {
 	position: relative;
 	display: block;
-	height: auto;
+	clear: left;
+	height: $profile-height;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 //	background-color: red;
 	
 	#profile-avatar {
+		position: relative;
+		display: inline;
+		float: left;
+		width: $profile-height;
+		height: $profile-width;
+//		background-color: black;
 		img {
+			position: relative;
 			@include border-radius(4px);
-			margin: 0;
-			padding: 0;
 		}
 	}
 	#profile-info {
+		display: inline;
+		position: relative;
+		float: left;
+		width: auto;
+		height: auto;
+		clear: right;
+		margin: 0 0 0 10px;
+//		background-color: orange;
 	}
 }
 

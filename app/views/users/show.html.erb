@@ -3,17 +3,20 @@
     <%= image_tag(@user.avatar_url(:profile)) %> 
   </div>
   <div id="profile-info">
-    <span id="profile-statement"></span>
   </div>
 </div>
 <div id="profile-agendas">
   <h3>Agendas</h3>
-  <ul>
-    <% @user.agendas.each do |agenda| %>
-      <li id="<%= @user.username %>-agenda-<%= agenda.id %>" class="profile-agenda">
-        <%= link_to(agenda.name, user_agenda_path(@user, agenda)) %>
+  <table id="user_agendas_table">
+    <% @agendas.each_slice(4) do |slice| %>
+    <tr class="agendas_table_row">
+      <% slice.each do |agenda| %>
+      <td id="<%= @user.username %>-agenda-<%= agenda.id %>" class="agendas_table_data">
+         <%= link_to(agenda.name, user_agenda_path(@user, agenda)) %><br/>
         <%= agenda.description %>
-      </li>
+      </td>
+      <% end %>
+    </tr>
     <% end %>
-  </ul>
+  </table>
 </div>
