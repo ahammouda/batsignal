@@ -3,15 +3,33 @@
 //	NAV BAR
 //
 //
+$BAR1: #0DFF8E;
+$BAR2: blue;
 
 #navbar {
 	margin: 0;
 	width: 100%;
-	background-color: white;
-	@include box-shadow(0px 1px 4px 2px #696969);
-	border-bottom: 2px solid gray;
+ 	@include box-shadow(0px 1px 5px 0px #8DB1D6);
+	border-bottom: 1px solid #FFEAA3;
 	position: fixed;
 	z-index: 8;
+	background-color: white;
+
+	.navbar-tag {
+		display: inline;
+		positin: relative;
+		float:left;
+		min-height: 25px;
+		min-width: 10px;
+	}
+
+	.navbar-tag.green {
+		background-color: $BAR1;
+	}
+
+	.navbar-tag.blue {
+		background-color: $BAR2;
+	}
 
 	#navbar-container{
 		width: 970px;

@@ -2,12 +2,12 @@ class UsersController < ApplicationController
 #  before_filter :find_user, :except => [:index, :new, :edit, :create]
 
   def index
-    @users = User.find(:all)
+    @users = User.page(params[:page]).per_page(10).order("created_at DESC")
   end
   
   def show
     @user = User.find(params[:id])
-    @agendas = @user.agendas.order("position")
+    @agendas = @user.agendas.page(params[:page]).per_page(10).order("created_at DESC")
     @follows = @user.all_follows
     if @user == current_user
       @agenda = current_user.agendas.new
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     if @user.save
       auto_login(@user)
       redirect_back_or_to user_path(@user), :notice => "Welcome to Agendo."
+      
     else
       render 'new'
       flash.now[:error] = "There was an error creating your account."

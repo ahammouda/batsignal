@@ -1,22 +1,37 @@
 <div id="profile-top">
-  <div id="profile-avatar" class="clearfix">
-    <%= image_tag(@user.avatar_url(:profile)) %> 
+
+  <div id="profile-top-left" class="profile-top">
+    <div id="profile-helped">
+      <div class="profile-help-bar green">
+        <span class="profile-help">H<br/>E<br/>L<br/>P<br/>E<br/>D</span>
+      </div>
+    </div>
+    <div id="profile-helpers">
+      <div class="profile-help-bar blue">
+        <span class="profile-help">H<br/>E<br/>L<br/>P<br/>E<br/>R</span>
+      </div>
+    </div>
   </div>
-  <div id="profile-info">
+
+  <div id="profile-top-mid" class="profile-top">
+    <div id="profile-identity">
+      <div id="profile-avatar">
+        <%= image_tag(@user.avatar_url(:profile)) %> 
+      </div>
+    </div>
   </div>
+  <div id="profile-top-right" class="profile-top">
+    <br/>
+  </div>
+
+
+
 </div>
+
 <div id="profile-agendas">
-  <h3>Agendas</h3>
-  <table id="user_agendas_table">
-    <% @agendas.each_slice(4) do |slice| %>
-    <tr class="agendas_table_row">
-      <% slice.each do |agenda| %>
-      <td id="<%= @user.username %>-agenda-<%= agenda.id %>" class="agendas_table_data">
-         <%= link_to(agenda.name, user_agenda_path(@user, agenda)) %><br/>
-        <%= agenda.description %>
-      </td>
-      <% end %>
-    </tr>
-    <% end %>
-  </table>
+  <div id="profile-agendas-header">
+  </div>
+  <div id="profile-agendas-container">
+    <%= render :partial => "agenda", :collection => @agendas %>
+  </div>
 </div>

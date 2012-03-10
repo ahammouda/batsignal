@@ -3,7 +3,7 @@
   <ol>
     <% @my_agendas.each do |agenda| %>
       <li class="ls-agenda">
-        <%= link_to agenda.name, user_agenda_path(@me, agenda.id) %><br/>
+        <%= link_to agenda.title, user_agenda_path(@me, agenda.id) %><br/>
       </li>
     <% end %>
   </ol>

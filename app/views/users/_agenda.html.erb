@@ -1,0 +1,7 @@
+<div class="profile-agenda">
+  <div class="profile-agenda-title">
+    <%= link_to(agenda.title, user_agenda_path(@user, agenda)) %>
+    <%= agenda.description.truncate(200) %>
+  </div>
+</div>
+<hr/>
