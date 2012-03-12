@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
    def index
-       @user = User.find(params[:id])
-       @agenda = @user.agendas.find(params[:agenda_id])
+       @user = User.find(params[:user_id])
+       @agenda = @user.agendas.find(params[:id])
        @items = @agenda.items      
    end
    
@@ -19,10 +19,11 @@ class ItemsController < ApplicationController
        @user = current_user
        @agenda = @user.agendas.find(params[:agenda_id])
        @item = Item.new(params[:item])
+       @item.agenda_id = @agenda.id
        if @item.save
-       	  redirect_to user_agenda_path(@user, @agenda)#, :notice = "Successfully Added Item"
+       	  redirect_to user_agenda_path(@user, @agenda), :notice => flash["Successfully Added Item"]
        else
-          render 'new', #flash[:error]# = "Failed to save item"
+          render 'new', :action => flash[:error]
        end
    end
    

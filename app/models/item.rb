@@ -6,4 +6,5 @@ class Item < ActiveRecord::Base
    
    validates :topic, :presence => true
    validates :body, :presence => true
+   validates :agenda_id, :presence => true
 end
