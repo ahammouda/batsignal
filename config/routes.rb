@@ -7,6 +7,10 @@ Batsignal::Application.routes.draw do
     end
   end
 
+  resources :agendas do
+    resources :items
+  end
+    
   match 'users/:id/add' => 'follows#create', :as => 'add'
   match 'users/:id/remove' => 'follows#destroy', :as => 'remove'
 

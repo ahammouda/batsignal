@@ -24,6 +24,25 @@
       <%= link_to "Fork agenda", fork_user_agenda_path(@user, @agenda), :method => :post %>
     </div>
   <% end %>
+  <br />
+  <p>
+    <b>Items:</b>
+    <% if @item == nil %>
+      No Items
+    <% else %>
+      <% @item.each do |i| %>
+      <ul>
+        <li><%= i.topic %></li>
+        <li><%= i.body %></li>
+      </ul>
+      <% end %>
+    <% end %>
+    <br /><br />
+    <% if current_user && current_user.id == @user.id %>
+      <%= link_to "Add Item", new_agenda_item_path(@agenda, @item), :class => "btn" %>
+    <% end %>
+  </p>
+  <br />
 
 </div>
 <br/>

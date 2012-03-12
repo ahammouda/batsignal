@@ -17,12 +17,12 @@ class ItemsController < ApplicationController
    
    def create
        @user = current_user
-       @agenda = @user.agendas.find([:agenda_id])
+       @agenda = @user.agendas.find(params[:agenda_id])
        @item = Item.new(params[:item])
        if @item.save
-       	  redirect_to user_agenda_path(@user, @agenda), :notice = "Successfully Added Item"
+       	  redirect_to user_agenda_path(@user, @agenda)#, :notice = "Successfully Added Item"
        else
-          render 'new', :error = "Failed to save item"
+          render 'new', #flash[:error]# = "Failed to save item"
        end
    end
    
