@@ -19,7 +19,7 @@ class AgendasController < ApplicationController
     @user = User.find(params[:user_id])
     @agenda = @user.agendas.find(params[:id])
     
-    @item = Item.all
+    @item = @agenda.items.all
         
     unless @agenda.root == nil
       @root = User.find(@agenda.root.user_id)
