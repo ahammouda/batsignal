@@ -1,5 +1,6 @@
 <div id="agenda-details">
   <h1>Agenda: <%= @agenda.name %></h1>
+  <%= link_to 'Back', user_path(@user) %>
   Created at: <%= @agenda.created_at %>
 </div>
 
@@ -9,17 +10,19 @@
   <% else %>
     <%= @agenda.description %>
   <% end %>
-
-  <% if current_user && current_user.id == @user.id %>
-    <div id="add-description">
-      <% if @agenda.description == nil %>
-        <%= link_to "Add description", edit_user_agenda_path(current_user, @agenda) %>
-      <% else %>
-        <%= link_to "Edit description", edit_user_agenda_path(current_user, @agenda), :class => "btn" %>
-      <% end %>
-    </div>
-  <% end %>
 </div>
+
+<br/>
+
+<% if current_user && current_user.id == @user.id %>
+  <div id="add-description">
+    <% if @agenda.description == nil %>
+      <%= link_to "Add description", edit_user_agenda_path(current_user, @agenda) %>
+    <% else %>
+      <%= link_to "Edit Agenda", edit_user_agenda_path(current_user, @agenda), :class => "btn" %>
+    <% end %>
+  </div>
+<% end %>
 
 <% unless current_user.id == @user.id %>
   <div id="fork-agenda">
@@ -27,24 +30,27 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', user_path(@user) %>
-
+<br/>
 <div id="agenda-items">
   <h3>Items</h3>
-  <% if current_user && current_user.id == @user.id %>
-    <%= link_to "Add Item", new_user_agenda_item_path(@user, @agenda), :class => "btn" %>
-  <% end %>
   <% if @item == nil %>
     No Items
   <% else %>
     <ul>
     <% @item.each do |item| %>
-      <li><%= item.topic %></li>
+      <li><%= link_to(item.topic, user_agenda_item_path(@user, @agenda, item))%></li>
     <% end %>
     </ul>
   <% end %>
+  <% if current_user && current_user.id == @user.id %>
+    <%= link_to "Add Item", new_user_agenda_item_path(@user, @agenda), :class => "btn" %>
+  <% end %>
+</div>
+<br/>
+
+<div id="agenda-comments">
+  <h3>Comments</h3>
+  <%= comments_for @agenda %>
 </div>
 
-<% if current_user && current_user.id == @user.id %>
-  <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete, :class => "btn btn-danger"%>
-<% end %>
+

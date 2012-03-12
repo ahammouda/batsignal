@@ -30,3 +30,5 @@ gem 'carrierwave'											# image uploading
 
 gem 'twilio-ruby'
 gem 'rabl' 
+gem 'opinio'
+gem "kaminari"

@@ -5,6 +5,7 @@ class Agenda < ActiveRecord::Base
   acts_as_tree
   acts_as_audited
   has_associated_audits
+  opinio_subjectum
  
   belongs_to :user
   has_many :items

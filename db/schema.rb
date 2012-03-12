@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120309223243) do
+ActiveRecord::Schema.define(:version => 20120312212539) do
 
   create_table "agenda_hierarchies", :id => false, :force => true do |t|
     t.integer "ancestor_id",   :null => false
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(:version => 20120309223243) do
   add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
   add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "owner_id",         :null => false
+    t.integer  "commentable_id",   :null => false
+    t.string   "commentable_type", :null => false
+    t.text     "body",             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",                      :null => false

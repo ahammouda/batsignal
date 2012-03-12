@@ -5,4 +5,6 @@ class Item < ActiveRecord::Base
    attr_accessible :topic, :body
    
    validates :topic, :presence => true
+
+   opinio_subjectum
 end
