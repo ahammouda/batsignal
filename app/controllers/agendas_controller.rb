@@ -15,10 +15,8 @@ class AgendasController < ApplicationController
   end
 
   def show
-#    check_visibility   // add in privacy control at next dev pass
     @user = User.find(params[:user_id])
     @agenda = @user.agendas.find(params[:id])
-    
     @item = @agenda.items.all
         
     unless @agenda.root == nil
