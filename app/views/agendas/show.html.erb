@@ -1,10 +1,9 @@
-<h1>Agenda: <%= @agenda.name %></h1>
 <div id="agenda-details">
+  <h1>Agenda: <%= @agenda.name %></h1>
   Created at: <%= @agenda.created_at %>
 </div>
-<%= link_to '< Back', user_path(@user) %>
+
 <div id="agenda-description">
-  <br/>
   <% if @agenda.description == nil %>
     No description
   <% else %>
@@ -19,34 +18,33 @@
         <%= link_to "Edit description", edit_user_agenda_path(current_user, @agenda), :class => "btn" %>
       <% end %>
     </div>
-  <% else %>
-    <div id="fork-agenda">
-      <%= link_to "Fork agenda", fork_user_agenda_path(@user, @agenda), :method => :post %>
-    </div>
   <% end %>
-  <br />
-  <p>
-    <b>Items:</b>
-    <% if @item == nil %>
-      No Items
-    <% else %>
-      <% @item.each do |i| %>
-      <ul>
-        <li><%= i.topic %></li>
-        <li><%= i.body %></li>
-      </ul>
-      <% end %>
-    <% end %>
-    <br /><br />
-    <% if current_user && current_user.id == @user.id %>
-      <%= link_to "Add Item", new_agenda_item_path(@agenda, @item), :class => "btn" %>
-    <% end %>
-  </p>
-  <br />
-
 </div>
-<br/>
-<br/>
+
+<% unless current_user.id == @user.id %>
+  <div id="fork-agenda">
+    <%= link_to "Fork agenda", fork_user_agenda_path(@user, @agenda), :method => :post, :class => "btn-inverse" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', user_path(@user) %>
+
+<div id="agenda-items">
+  <h3>Items</h3>
+  <% if current_user && current_user.id == @user.id %>
+    <%= link_to "Add Item", new_user_agenda_item_path(@user, @agenda), :class => "btn" %>
+  <% end %>
+  <% if @item == nil %>
+    No Items
+  <% else %>
+    <ul>
+    <% @item.each do |item| %>
+      <li><%= item.topic %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <% if current_user && current_user.id == @user.id %>
   <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete, :class => "btn btn-danger"%>
 <% end %>

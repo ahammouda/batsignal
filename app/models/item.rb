@@ -2,9 +2,7 @@ class Item < ActiveRecord::Base
          
    belongs_to :agenda
       
-   attr_accessible :topic, :body, :agenda_id
+   attr_accessible :topic, :body
    
    validates :topic, :presence => true
-   validates :body, :presence => true
-   validates :agenda_id, :presence => true
 end
