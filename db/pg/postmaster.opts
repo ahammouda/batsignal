@@ -1,1 +1,1 @@
-/usr/local/Cellar/postgresql/9.0.2/bin/postgres "-D" "db/pg/"
+/usr/local/Cellar/postgresql/9.0.3/bin/postgres "-D" "."
