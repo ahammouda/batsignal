@@ -6,7 +6,9 @@ Batsignal::Application.routes.draw do
     resources :agendas do
       collection { post :sort }
       member { post :fork }
-      resources :items 
+      resources :items do
+        opinio
+      end
       opinio
     end
   end
