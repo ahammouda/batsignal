@@ -1,15 +1,17 @@
 Batsignal::Application.routes.draw do
-  opinio_model
 
   root :to => 'users#new'
   resources :users do
+
     resources :agendas do
       collection { post :sort }
       member { post :fork }
+      resources :comments, :only => [:create, :destroy]
+
       resources :items do
-        opinio
+        resources :comments, :only => [:create, :destroy]
       end
-      opinio
+
     end
   end
   

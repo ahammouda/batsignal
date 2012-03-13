@@ -1,3 +1,5 @@
 class Comment < ActiveRecord::Base
-  opinio
+  belongs_to :commentable, :polymorphic => true
+
+  attr_accessible :body
 end

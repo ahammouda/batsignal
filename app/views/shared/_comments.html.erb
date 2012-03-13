@@ -1,0 +1,12 @@
+<% if commentable.comments.empty? %>
+  Add a comment
+<% else %>
+  <% for comment in commentable.comments %>
+    <%= commentable.body %>
+  <% end %>
+<% end %>
+
+<% simple_form_for [current_user, commentable, Comment.new()] do |f| %>
+  <%= f.input :body %>
+  <%= f.submit "Add Comment" %>
+<% end %>

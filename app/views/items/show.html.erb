@@ -1,7 +1,7 @@
-<h1><%= @agenda.name %></h1>
-<%= link_to "Back", :back %>
+<%= render :partial => "agendas/description" %>
 <h2><%= @item.topic %></h2>
 
 <br/>
+<br/>
 <h3>Comments</h3>
-<%= comments_for @item %>
+<%= render :partial => "shared/comments", :locals => { :commentable => @item } %>

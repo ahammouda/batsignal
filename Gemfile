@@ -30,5 +30,9 @@ gem 'carrierwave'											# image uploading
 
 gem 'twilio-ruby'
 gem 'rabl' 
-gem 'opinio'
 gem "kaminari"
+gem 'make_resourceful'
+
+# gem 'opinio'
+# gem 'acts_as_commentable_with_threading'
+

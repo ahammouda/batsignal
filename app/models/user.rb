@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_many :agendas
+  has_many :comments, :as => :commentable
 
   acts_as_follower
   acts_as_followable

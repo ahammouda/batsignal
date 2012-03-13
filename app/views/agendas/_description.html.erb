@@ -1,0 +1,22 @@
+<div id="agenda-details">
+  <h1><%= @agenda.name %></h1>
+  <div id="agenda-description">
+    <% if @agenda.description == nil %>
+      No description
+    <% else %>
+      <%= @agenda.description %><br/>
+    <% end %>
+  </div>
+</div>
+
+<% if current_user && current_user.id == @user.id %>
+  <div id="add-description">
+    <% if @agenda.description == nil %>
+      <%= link_to "Add description", edit_user_agenda_path(current_user, @agenda) %>
+    <% else %>
+      <%= link_to "Edit Agenda", edit_user_agenda_path(current_user, @agenda), :class => "btn" %>
+    <% end %>
+  </div>
+<% end %>
+
+

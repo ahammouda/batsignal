@@ -1,56 +1,56 @@
-<div id="agenda-details">
-  <h1>Agenda: <%= @agenda.name %></h1>
-  <%= link_to 'Back', user_path(@user) %>
-  Created at: <%= @agenda.created_at %>
-</div>
-
-<div id="agenda-description">
-  <% if @agenda.description == nil %>
-    No description
-  <% else %>
-    <%= @agenda.description %>
-  <% end %>
-</div>
-
+<%= render :partial => "description" %>
 <br/>
-
-<% if current_user && current_user.id == @user.id %>
-  <div id="add-description">
-    <% if @agenda.description == nil %>
-      <%= link_to "Add description", edit_user_agenda_path(current_user, @agenda) %>
+<div id="agenda-statistics">
+  Supporters: 7,000,000,000<br/>
+  Detractors: 3<br/>
+  Activity Rating: 90/100 <br/>
+  Created: <%= @agenda.created_at %>
+</div>
+<br/>
+<%= render :partial => "buttons" %>
+<br/>
+<br/>
+<div id="agenda-goals">
+  <h3>Goals</h3>
+  <b>Active</b> | Alternatives (20) | Historic
+  <ol>
+    <li>Build a tool that helps people help other people.</li>
+    <li>Build a tool that helps people get help on whatever they may be doing or contemplating doing.</li>
+    <li>Build a tool that learns how to help people do anything they may be doing, contemplating doing, or are likely to contemplate doing.</li>
+  </ol>
+  // Suggest a goal.
+</div>
+<br/>
+<div id="agenda-plan">
+  <h3>Plan</h3>
+  <b>Active</b> | Alternatives (20) | Historic
+  <div id="agenda-plan-items">
+    <% if @item == nil %>
+      No Items
     <% else %>
-      <%= link_to "Edit Agenda", edit_user_agenda_path(current_user, @agenda), :class => "btn" %>
+      <ol>
+      <% @item.each do |item| %>
+        <li><%= link_to(item.topic.capitalize, user_agenda_item_path(@user, @agenda, item))%></li>
+      <% end %>
+      </ol>
+      // Suggest a plan
+    <% end %>
+    <% if current_user && current_user.id == @user.id %>
+      <%= link_to "Add Item", new_user_agenda_item_path(@user, @agenda), :class => "btn" %>
     <% end %>
   </div>
-<% end %>
-
-<% unless current_user.id == @user.id %>
-  <div id="fork-agenda">
-    <%= link_to "Fork agenda", fork_user_agenda_path(@user, @agenda), :method => :post, :class => "btn-inverse" %>
-  </div>
-<% end %>
-
-<br/>
-<div id="agenda-items">
-  <h3>Items</h3>
-  <% if @item == nil %>
-    No Items
-  <% else %>
-    <ul>
-    <% @item.each do |item| %>
-      <li><%= link_to(item.topic, user_agenda_item_path(@user, @agenda, item))%></li>
-    <% end %>
-    </ul>
-  <% end %>
-  <% if current_user && current_user.id == @user.id %>
-    <%= link_to "Add Item", new_user_agenda_item_path(@user, @agenda), :class => "btn" %>
-  <% end %>
 </div>
 <br/>
 
+<div id="agenda-map">
+  <h3>Map</h3>
+  <b>Active</b> | Alternatives (20) | Historic<br/>
+    # Interface to model of perception of context relevant to Agenda
+</div>
+<br/>
 <div id="agenda-comments">
   <h3>Comments</h3>
-  <%= comments_for @agenda %>
+  <%= render :partial => "shared/comments", :locals => { :commentable => @agenda } %>
 </div>
-
-
+<br/>
+<%= render :partial => "buttons" %>
