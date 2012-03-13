@@ -1,3 +1,12 @@
+<div>
+  <div id="profile-avatar" class="clearfix">
+    <%= image_tag(@user.avatar_url(:profile)) %> 
+  </div>
+  <div>
+    <h2><%= link_to(@user.username, user_path(@user)) %></h2>
+  </div>
+</div>
+<br/>
 <%= render :partial => "description" %>
 <br/>
 <div id="agenda-statistics">
@@ -54,4 +63,3 @@
   <%= render :partial => "shared/agenda_comments", :object => @agenda, :as => :commentable %>
   <% end %>
 </div>
-<br/>

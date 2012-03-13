@@ -1,10 +1,12 @@
-<div id="profile-top">
+<div >
   <div id="profile-avatar" class="clearfix">
     <%= image_tag(@user.avatar_url(:profile)) %> 
   </div>
   <div id="profile-info">
+    <h2><%= @user.username %>
   </div>
 </div>
+<br/>
 <div id="profile-agendas">
   <h3>Agendas</h3>
   <table id="user_agendas_table">

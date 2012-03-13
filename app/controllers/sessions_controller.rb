@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
       redirect_to user_path(current_user)
     else
       @user = User.new
+      render :layout => 'lander' and return
     end
-    render :layout => 'lander'
   end
 
   def create
