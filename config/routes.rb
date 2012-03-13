@@ -1,8 +1,8 @@
 Batsignal::Application.routes.draw do
 
   root :to => 'users#new'
-  resources :users do
 
+  resources :users do
     resources :agendas do
       collection { post :sort }
       member { post :fork }
@@ -11,7 +11,6 @@ Batsignal::Application.routes.draw do
       resources :items do
         resources :comments, :only => [:create, :destroy]
       end
-
     end
   end
   
@@ -27,11 +26,6 @@ Batsignal::Application.routes.draw do
 
   match 'signup' => 'users#new'
   match 'logout' => 'sessions#destroy'
-
-
-
-
-
 
 
   # The priority is based upon order of creation:

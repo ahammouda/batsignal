@@ -1,14 +1,18 @@
 <div id="ls-profile">
   <div id="ls-avatar">
+    <% if logged_in? %>
     <%= link_to(image_tag(user.avatar_url(:profile)), user_path(user)) %>
+    <% else %>
+    <%= image_tag(src="http://batsignal.herokuapp.com/assets/fallback/profile_default.jpg") %>
+    <% end %> 
   </div>
   <div id="ls-username-background">
     <div id="ls-username">
       <p id="ls-name-holder">
-        <% if request.fullpath == user_path(user) %>
-          <%= user.username %>
+        <% if logged_in? %>
+        <%= current_user.username %>
         <% else %>
-          <br/>
+          You!
         <% end %>
       </p>
     </div>

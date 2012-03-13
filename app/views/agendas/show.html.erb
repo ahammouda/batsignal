@@ -50,7 +50,8 @@
 <br/>
 <div id="agenda-comments">
   <h3>Comments</h3>
-  <%= render :partial => "shared/comments", :locals => { :commentable => @agenda } %>
+  <% if logged_in? %>
+  <%= render :partial => "shared/agenda_comments", :object => @agenda, :as => :commentable %>
+  <% end %>
 </div>
 <br/>
-<%= render :partial => "buttons" %>

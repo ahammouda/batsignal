@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
       @my_follows = @me.all_follows
       @new_agenda = @me.agendas.new
     else
-      @guest = User.find_or_create_by_id(100)
-      @guest.username = "You!"
+      @me = User.new
     end 
   end
 

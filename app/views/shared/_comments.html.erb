@@ -2,11 +2,11 @@
   Add a comment
 <% else %>
   <% for comment in commentable.comments %>
-    <%= commentable.body %>
+    <%= comment.body %>
   <% end %>
 <% end %>
 
-<% simple_form_for [current_user, commentable, Comment.new()] do |f| %>
+<%= simple_form_for [current_user, commentable, Comment.new()], :url => "user_#{commentable}_" do |f| %>
   <%= f.input :body %>
   <%= f.submit "Add Comment" %>
 <% end %>
