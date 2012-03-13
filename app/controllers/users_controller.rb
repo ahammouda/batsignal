@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 #  before_filter :find_user, :except => [:index, :new, :edit, :create]
-  layout 'application', :except => [:new]
-  layout 'lander', :only => [:new]
+  layout 'application', :except => :new
 
   def index
     @users = User.find(:all)
@@ -22,6 +21,7 @@ class UsersController < ApplicationController
     else
       @user = User.new
     end
+    render :layout => 'lander'
   end
   
   def create

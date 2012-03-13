@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  layout 'lander', :only => [:new] 
 
   def new
     if logged_in?
@@ -7,6 +6,7 @@ class SessionsController < ApplicationController
     else
       @user = User.new
     end
+    render :layout => 'lander'
   end
 
   def create
