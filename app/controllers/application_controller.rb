@@ -5,11 +5,14 @@ class ApplicationController < ActionController::Base
   before_filter :left_side_data
   
   def left_side_data
-    if current_user 
+    if logged_in? 
       @me = current_user 
       @my_agendas = @me.agendas.find(:all)
       @my_follows = @me.all_follows
       @new_agenda = @me.agendas.new
+    else
+      @guest = User.find_or_create_by_id(100)
+      @guest.username = "You!"
     end 
   end
 

@@ -1,3 +1,25 @@
+<div id="navbar-logo">
+  <%= link_to "Agendo", user_path(@me), :id => "agendo" %>
+</div>
+
+<div id="navbar-items">
+  <ul class="nav">
+    <li class="divider-vertical logo" id="first-divider"></li>
+    <li><%= link_to "People", users_path %></li>
+    <li class="divider-vertical logo" id="first-divider"></li>
+    <li><%= link_to "Agendas", users_path %></li>
+    <li class="divider-vertical logo"></li>
+    <li><%= link_to "Maps", users_path %></li>
+    <li class="divider-vertical logo"></li>
+    <li><%= link_to "Plans", users_path %></li>
+    <li class="divider-vertical logo"></li>
+  </ul>
+</div>
+
+<form class="navbar-search pull-left">
+  <input type="text" class="search-query" placeholder="Search">
+</form>
+
 <div id="navbar-user-menu">
   <ul>
     <li class="dropdown">
@@ -12,22 +34,5 @@
     </li>
   </ul>
 </div>
-<div id="navbar-logo">
-  <%= link_to "Agendo", user_path(@me), :id => "agendo" %>
-</div>
-<div id="navbar-items">
-  <ul class="nav">
-    <li class="divider-vertical logo" id="first-divider"></li>
-    <li><%= link_to "People", users_path %></li>
-    <li class="divider-vertical logo" id="first-divider"></li>
-    <li><%= link_to "Agendas", users_path %></li>
-    <li class="divider-vertical logo"></li>
-    <li><%= link_to "Maps", users_path %></li>
-    <li class="divider-vertical logo"></li>
-    <li><%= link_to "Plans", users_path %></li>
-    <li class="divider-vertical logo"></li>
-  </ul>
-</div>
-<form class="navbar-search pull-left">
-  <input type="text" class="search-query" placeholder="Search">
-</form>
+
+

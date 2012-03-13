@@ -1,9 +1,9 @@
 <div id="ls-agendas-list" class="left-side-component">
   <span class="ls-agenda-header">Agendas</span> | People
   <ol>
-    <% @my_agendas.each do |agenda| %>
+    <% user.agendas.each do |agenda| %>
       <li class="ls-agenda">
-        <%= link_to agenda.name, user_agenda_path(@me, agenda.id) %><br/>
+        <%= link_to agenda.name, user_agenda_path(user, agenda.id) %><br/>
       </li>
     <% end %>
   </ol>

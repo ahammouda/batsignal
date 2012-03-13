@@ -1,7 +1,9 @@
-<% if logged_in? %>
 <div id="navbar"> 
   <div id="navbar-container">
-      <%= render :partial => "layouts/navbar/logged_in_nav" %>
+  <% if logged_in? %>
+    <%= render :partial => "layouts/navbar/logged_in_nav" %>
+  <% else %>
+    <%= render :partial => "layouts/navbar/logged_out_nav" %>
+  <% end %>
   </div>
 </div>
-<% end %>

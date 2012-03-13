@@ -8,15 +8,12 @@
   <%= render :partial => 'layouts/navbar/navbar' %>
   <%= render :partial => 'layouts/uncore/flash', :object => flash %>
 
-  <% if logged_in? %>
   <%= render :partial => 'layouts/left_side/left_side', :object => @me %>
   <div id="right-side">
     <div id="main-content-container">
       <%= yield %>
     </div>
   </div>
-  <% else %>
-  <%= yield %>
-  <% end %>
+
 </body>
 </html>

@@ -1,9 +1,23 @@
 <%= render :partial => "layouts/left_side/background_prep" %>
 <div id="left-side">
   <div id="ls-profile-cap"></div>
-  <%= render :partial => 'layouts/left_side/profile', :object => @me %>
-  <div id="ls-action-button" class="well">
-    <%= link_to "New Agenda", new_user_agenda_path(@me),:class => "btn btn-primary profile-action" %>
+
+  <% if logged_in? %>
+
+    <%= render :partial => 'layouts/left_side/profile', :object => @me, :as => 'user' %>
+    <div id="ls-action-button" class="well">
+      <%= link_to "New Agenda", new_user_agenda_path(@me),:class => "btn btn-primary profile-action" %>
+    </div>
+    <%= render :partial => 'layouts/left_side/agendas', :object => @me, :as => 'user' %>
+
+  <% else %>
+
+    <%= render :partial => 'layouts/left_side/profile', :object => @guest, :as => 'user' %>
+    <div id="ls-action-button" class="well">
+      <%= link_to "Sign up!", signup_path, :class => "btn btn-primary profile-action" %>
+    </div>
+    <%= render :partial => 'layouts/left_side/agendas', :object => @guest, :as => 'user' %>
+
+  <% end %>
   </div>
-  <%= render :partial => 'layouts/left_side/agendas', :object => @me %>
 </div>
